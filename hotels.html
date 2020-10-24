@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+  </head>
+  <body class="body">
+    <div class="container">
+
+      <header class="header">
+
+        <a class="header__logo-link" href="index.html">
+          <img class="header__logo"
+            src="img/logo.svg" alt="Логотип сайта"
+            width="138" height="70">
+        </a>
+
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+
+            <li class="nav__item">
+              <a href="">Информация</a>
+            </li>
+            <li class="nav__item">
+              <a href="">Фото и видео</a>
+            </li>
+            <li class="nav__item">
+              <a href="">Карта штата</a>
+            </li>
+            <li class="nav__item">
+              <a href="">Гостиницы</a>
+            </li>
+
+          </ul>
+        </nav>
+
+      </header>
+
+    <main class="main">
+      <h1 class="visually-hidden">Найти жилье</h1>
+
+      <section>
+        <h2 class="visually-hidden">Фильтры</h2>
+        <form class="filter__form filter-form" action="https://echo.htmlacademy.ru/">
+
+          <fieldset class="filter-form__fieldset">
+            <h3 class="filter-form__title">Инфраструктура:</h3>
+
+            <ul class="filter-form__list">
+
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="pool" id="pool" checked>
+                <label class="filter-form__check-label" for="pool">Бассейн</label>
+              </li>
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="parking" id="parking">
+                <label class="filter-form__check-label" for="parking">Парковка</label>
+              </li>
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="wifi" id="wifi">
+                <label class="filter-form__check-label" for="wifi">wi-fi</label>
+              </li>
+
+            </ul>
+
+          </fieldset>
+
+          <fieldset class="filter-form__fieldset">
+            <h3 class="filter-form__title">Тип жилья:</h3>
+
+            <ul class="filter-form__list">
+
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="hotel" id="hotel" checked>
+                <label class="filter-form__check-label" for="hotel">Гостиница</label>
+              </li>
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="motel" id="motel" checked>
+                <label class="filter-form__check-label" for="motel">Мотель</label>
+              </li>
+              <li class="filter-form__list-item">
+                <input class="visually-hidden filter-form__check" type="checkbox" name="apartments" id="apart" checked>
+                <label class="filter-form__check-label" for="apart">Апартаменты</label>
+              </li>
+
+            </ul>
+
+          </fieldset>
+
+          <fieldset class="filter-form__fieldset filter-form__fieldset--price">
+            <h3 class="filter-form__title">Стоимость в сутки (Р):</h3>
+
+              <div class="filter-form__price">
+                <div class="filter-form__price-half">
+                  <label class="filter-form__label" for="from">От</label>
+                  <input class="filter-form__input"
+                  type="number" name="from"
+                  id="from" value="0" disabled
+                  title="Минимальная стоимость">
+                </div>
+
+                <div class="filter-form__price-half">
+                  <label class="filter-form__label" for="to">До</label>
+                  <input class="filter-form__input"
+                  type="number" name="to"
+                  id="to" value="3000" disabled
+                  title="Максимальная стоимость">
+                </div>
+              </div>
+
+              <input class="visually-hidden" type="range" id="price" name="price" min="0" max="3000">
+              <div class="filter-form__range">
+                <div class="filter-form__scale">
+                  <div class="filter-form__bar"></div>
+                </div>
+                <button type="button" class="filter-form__handle filter-form__handle--min"></button>
+                <button type="button" class="filter-form__handle filter-form__handle--max"></button>
+              </div>
+
+              <button class="filter-form__submit" type="submit">Показать</button>
+          </fieldset>
+
+        </form>
+      </section>
+
+      <div class="wrapper">
+        <section class="result-info">
+          <p class="result-info__text">Найдено: 3</p>
+        </section>
+
+        <section class="sort">
+          <h2 class="sort__title">Сортировка:</h2>
+
+          <ul class="sort__list">
+            <li class="sort__item">
+              <input class="visually-hidden sort__input" type="radio" name="sort" value="count" id="count" checked>
+              <label class="sort__label" for="count">По цене</label>
+            </li>
+            <li class="sort__item">
+              <input class="visually-hidden sort__input" type="radio" name="sort" value="type" id="type">
+              <label class="sort__label" for="type">По типу</label>
+            </li>
+            <li class="sort__item">
+              <input class="visually-hidden sort__input" type="radio" name="sort" value="rate" id="rate">
+              <label class="sort__label" for="rate">По рейтингу</label>
+            </li>
+          </ul>
+
+          <div class="sort__togglers">
+
+            <input class="visually-hidden sort__toggler-input" type="radio" name="togglers" value="top" id="top">
+            <label class="sort__toggler" for="top">
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 0L0 10H11L5.5 0Z" fill="#CACACA"/>
+              </svg>
+            </label>
+
+            <input class="visually-hidden sort__toggler-input" type="radio" name="togglers" value="down" id="down" checked>
+            <label class="sort__toggler sort__toggler--down" for="down">
+              <svg width="11" height="10" viewBox="0 0 11 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.5 10L0 0H11" fill="#81B3D2"/>
+              </svg>
+            </label>
+
+          </div>
+        </section>
+      </div>
+
+      <section>
+        <h2 class="visually-hidden">Найденное жилье</h2>
+
+        <article class="card">
+          <img class="card__img" src="img/house1.jpg" alt="Фотография жилья" width="135" height="90">
+
+          <div class="card__info">
+            <h3 class="card__name">Amara Resort & Spa</h3>
+
+            <span class="card__text">
+              <p class="card__type">Гостиница</p>
+              <p class="card__price">От 4000 Р.</p>
+            </span>
+
+            <div class="card__btns">
+              <a class="card__btn" href="">Подробнее</a>
+              <a class="card__btn card__btn--reserv" href="">Забронировать</a>
+            </div>
+          </div>
+
+          <div class="card__rate">
+            <ul class="card__stars">
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+            </ul>
+
+            <p class="card__rate-text">Рейтинг: 8,5</p>
+          </div>
+        </article>
+
+        <article class="results-card card">
+          <img class="card__img" src="img/house2.jpg" alt="Фотография жилья" width="135" height="90">
+
+          <div class="card__info">
+            <h3 class="card__name">Desert quail inn</h3>
+
+            <span class="card__text">
+              <p class="card__type">Мотель</p>
+              <p class="card__price">От 3000 Р.</p>
+            </span>
+
+            <div class="card__btns">
+              <a class="card__btn" href="">Подробнее</a>
+              <a class="card__btn card__btn--reserv" href="">Забронировать</a>
+            </div>
+          </div>
+
+          <div class="card__rate">
+            <ul class="card__stars">
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+            </ul>
+
+            <p class="card__rate-text">Рейтинг: 8,9</p>
+          </div>
+        </article>
+
+        <article class="results-card card">
+          <img class="card__img" src="img/house3.jpg" alt="Фотография жилья" width="135" height="90">
+
+          <div class="card__info">
+            <h3 class="card__name">Villas at Poco Diablo</h3>
+
+            <span class="card__text">
+              <p class="card__type">Апартаменты</p>
+              <p class="card__price">От 2000 Р.</p>
+            </span>
+
+            <div class="card__btns">
+              <a class="card__btn" href="">Подробнее</a>
+              <a class="card__btn card__btn--reserv" href="">Забронировать</a>
+            </div>
+          </div>
+
+          <div class="card__rate">
+            <ul class="card__stars">
+              <li class="card__star"></li>
+              <li class="card__star"></li>
+            </ul>
+
+            <p class="card__rate-text">Рейтинг: 9,2</p>
+          </div>
+        </article>
+      </section>
+
+    </main>
+
+    <footer class="footer footer--hotels">
+
+      <span class="footer__info">
+        <p class="footer__hash">#visitsedona</p>
+        <tel>ТЕЛ: +7(495) 666-01-66</tel>
+      </span>
+
+      <ul class="footer__social">
+        <li>
+          <a class="footer__soc-item" href=""><img src="img/twitter.svg" alt="Иконка твиттера" width="17" height="15"></a>
+        </li>
+        <li>
+          <a class="footer__soc-item" href=""><img src="img/fb-icon.svg" alt="Иконка фейсбука" width="12" height="22"></a>
+        </li>
+        <li>
+          <a class="footer__soc-item" href=""><img src="img/youtube.svg" alt="Иконка ютуба" width="20" height="16"></a>
+        </li>
+      </ul>
+
+      <span class="footer__academy">
+        <p>Website by</p>
+        <a class="footer__logo" href="https://htmlacademy.ru/intensive/htmlcss">
+          <img src="img/logo-htmlacademy.svg" alt="Логотип htmlacademy">
+        </a>
+      </span>
+
+    </footer>
+    </div>
+  </body>
+</html>
